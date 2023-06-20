@@ -6,8 +6,9 @@ import { NavBarComponent } from "@/components/NavBar";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <BackgroundComponent
-      children={<Component {...pageProps} />}
       navComponent={<NavBarComponent />}
-    />
+    >
+      <Component {...pageProps} />
+    </BackgroundComponent>
   );
 }

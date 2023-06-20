@@ -1,11 +1,10 @@
 import { ReactNode } from "react";
-import Image from "next/image";
 import { DevToSvgIcon } from "@/assets/icons/dev-to";
 import { GithubSvgIcon } from "@/assets/icons/github";
 
 interface SocialMedia {
   link: string;
-  icon(key: string): ReactNode;
+  icon(): ReactNode;
   name: string;
   color: string;
   gradient: string[];
@@ -23,7 +22,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
   const socialMedia: SocialMedia[] = [
     {
       link: "https://www.linkedin.com/in/bryan-herrera-dev",
-      icon: (key) => (
+      icon: () => (
         <DevToSvgIcon
           size={{
             width: 24,
@@ -37,7 +36,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
     },
     {
       link: "https://www.linkedin.com/in/bryan-herrera-dev",
-      icon: (key) => (
+      icon:() => (
         <GithubSvgIcon
           size={{
             width: 24,
@@ -56,7 +55,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
       return (
         <>
           {socialMedia.map((socialMediaItem, index) => (
-            <div key={index}>{socialMediaItem.icon(`${index}`)} {index}</div>
+            <div key={index}>{socialMediaItem.icon()} {index}</div>
           ))}
         </>
       );

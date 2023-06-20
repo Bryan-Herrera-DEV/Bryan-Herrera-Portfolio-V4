@@ -1,6 +1,5 @@
 export const YoutubeSvgIcon = ({
     size,
-    onClick,
     color = "white",
   }: IconProps) => {
     return (

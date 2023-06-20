@@ -10,9 +10,12 @@ export const NavBarComponent = () => {
         <div>
           <Image
             src={BryanHerreraLogo}
-            alt="Bryaan Herrera Dev Logo"
+            alt="Bryan Herrera Dev Logo"
             aria-label="Bryan Herrera Dev Logo"
-            className="w-10 h-10"
+            title="Bryan Herrera Dev Logo"
+            width={32}
+            height={37}
+            priority
           />
         </div>
         <div>

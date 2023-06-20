@@ -1,6 +1,5 @@
 export const TwitchSvgIcon = ({
     size,
-    onClick,
     color = "white",
   }: IconProps) => {
     return (

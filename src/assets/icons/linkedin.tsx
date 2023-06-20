@@ -1,6 +1,5 @@
 export const LinkedInSvgIcon = ({
     size,
-    onClick,
     color = "white",
   }: IconProps) => {
     return (

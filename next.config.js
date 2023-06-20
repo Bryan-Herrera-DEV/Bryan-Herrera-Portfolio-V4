@@ -5,6 +5,10 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+    images: {
+        minimumCacheTTL: 60,
+    }
+    
 }
 
 module.exports = nextConfig
