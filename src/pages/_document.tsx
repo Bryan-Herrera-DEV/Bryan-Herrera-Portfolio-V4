@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="/icon.svg" type="image/image+xml" />
+        <link rel="icon" href="/Bryan-Herrera-Dev-Logo.png" type="image/image+xml" />
       </Head>
       <body>
         <Main />

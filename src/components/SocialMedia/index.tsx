@@ -55,7 +55,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
       return (
         <>
           {socialMedia.map((socialMediaItem, index) => (
-            <div key={index}>{socialMediaItem.icon()} {index}</div>
+            <div key={index}>{socialMediaItem.icon()}</div>
           ))}
         </>
       );

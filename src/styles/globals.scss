@@ -5,3 +5,54 @@
 :root {
   --cursor-trail-color: hsla(183, 64%, 27%, 0.4);
 }
+
+.nav {
+  --border-bottom-width: 1px;
+  --border-color: rgba(82, 82, 82, .2);
+  --border-left-width: 1px;
+  --border-right-width: 1px;
+  --border-style: solid;
+  --border-top-width: 1px;
+  backdrop-filter: blur(12px);
+  background-color: rgba(28, 22, 47, .4);
+  border-radius: 12px;
+  width: 100%;
+  opacity: 1;
+
+  &::after {
+    content: "";
+    border-width: var(--border-top-width, 0) var(--border-right-width, 0) var(--border-bottom-width, 0) var(--border-left-width, 0);
+    border-color: var(--border-color, none);
+    border-style: var(--border-style, none);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+}
+
+.effect {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: min-content;
+  justify-content: space-between;
+  overflow: visible;
+  padding: 16px;
+  position: relative;
+}
+
+.selected-text {
+  background-image: linear-gradient(300deg, rgba(255, 68, 94, 1) 0%, rgba(248, 194, 49, 1) 100%);
+  display: inline-block;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: max(0em, calc(calc(1.3em - 22px) / 2));
+  margin: min(0em, calc(calc(1.3em - 22px) / -2));
+}

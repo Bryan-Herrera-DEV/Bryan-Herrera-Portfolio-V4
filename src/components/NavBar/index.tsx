@@ -4,7 +4,7 @@ import { SocialMediaComponent } from "../SocialMedia";
 
 export const NavBarComponent = () => {
   return (
-    <nav className="px-5 w-full flex items-center justify-between gap-4">
+    <nav className="px-5 w-full flex items-center justify-between gap-4 nav effect">
       <div className="flex items-center justify-start gap-4">
         {/* Logo and links */}
         <div>
@@ -13,8 +13,8 @@ export const NavBarComponent = () => {
             alt="Bryan Herrera Dev Logo"
             aria-label="Bryan Herrera Dev Logo"
             title="Bryan Herrera Dev Logo"
-            width={32}
-            height={37}
+            width={21}
+            height={26}
             priority
           />
         </div>
@@ -22,7 +22,11 @@ export const NavBarComponent = () => {
           <ul className="text-white flex gap-4 items-center justify-start text-sm font-medium">
             <li>Home</li>
             <li>Contact</li>
-            <li>My Work</li>
+            <li>
+              <p>
+                <span className="selected-text">My Work</span>
+              </p>
+            </li>
           </ul>
         </div>
       </div>
