@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { SocialMediaComponent } from "../SocialMedia";
 import { routesContstants } from "@/shared/constants";
-import Link from 'next/link';
+import Link from "next/link";
 
 export const NavBarComponent = () => {
   const router = useRouter();
@@ -12,17 +12,20 @@ export const NavBarComponent = () => {
     return Object.entries(routesContstants).map(([_, value], i) => {
       const route = value[0];
       const isRouteSelected = currentPath === route[0];
-      console.log(currentPath, route[0], i);
       return (
-        <>
-          <li key={route[1]}>
-            <Link href={route[0]} aria-label={`Go to ${route[1]} page`}>
-              <span className={isRouteSelected ? "selected-text" : "hover:text-gray-300 transition duration-200"}>
-                {route[1]}
-              </span>
-            </Link>
-          </li>
-        </>
+        <li key={route[1]}>
+          <Link href={route[0]} aria-label={`Go to ${route[1]} page`}>
+            <span
+              className={
+                isRouteSelected
+                  ? "selected-text"
+                  : "hover:text-gray-300 transition duration-200"
+              }
+            >
+              {route[1]}
+            </span>
+          </Link>
+        </li>
       );
     });
   };

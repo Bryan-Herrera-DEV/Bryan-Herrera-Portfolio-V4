@@ -16,14 +16,14 @@ export const TwitchSvgIcon = ({
       xmlSpace="preserve"
     >
       <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="12"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="12"
         d="M96 52v32m32-32v32"
       />
       <path
-        stroke-linejoin="round"
-        stroke-width="12"
+        strokeLinejoin="round"
+        strokeWidth="12"
         d="M34 138h30v32l32-32h24l38-38V22H52L34 40v98Z"
       />
     </svg>
