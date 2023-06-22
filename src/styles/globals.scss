@@ -49,7 +49,7 @@
 }
 
 .selected-text {
-  background-image: linear-gradient(300deg, rgba(255, 68, 94, 1) 0%, rgba(248, 194, 49, 1) 100%);
+  @apply bg-primary-gradient;
   display: inline-block;
   background-clip: text;
   -webkit-text-fill-color: transparent;
