@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/Bryan-Herrera-Dev-Logo.png" type="image/image+xml" />
       </Head>
-      <body>
+      <body className="h-full">
         <Main />
         <NextScript />
       </body>

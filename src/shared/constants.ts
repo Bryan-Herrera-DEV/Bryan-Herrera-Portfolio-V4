@@ -2,6 +2,8 @@ interface Constants {
     readonly NOMBRE: string;
     readonly NOMBRE_COMPLETO: string;
     readonly EMAIL: string;
+    readonly FECHA_NACIMIENTO: string;
+    readonly FECHA_INICIO: string;
 }
 
 export interface RoutesConstants {
@@ -16,7 +18,9 @@ export interface RoutesConstants {
 export const inmutableConstants: Constants = {
     NOMBRE: "Bryan Herrera",
     NOMBRE_COMPLETO: "Bryan Herrera Real",
-    EMAIL: "bryherrera55@gmail.com"
+    EMAIL: "bryherrera55@gmail.com",
+    FECHA_NACIMIENTO: "2003-02-24",
+    FECHA_INICIO: "2016-00-20"
 };
 
 /**

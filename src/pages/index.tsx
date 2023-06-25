@@ -1,4 +1,6 @@
 import { PageSeo } from "@/components/PageSeo";
+import HomeLayout from "@/components/layouts/home";
+import WorkExperience from "@/components/layouts/home/WorkExperience";
 import { getSEO } from "@/shared/seoData";
 
 const index = () => {
@@ -10,17 +12,8 @@ const index = () => {
         description={getSeoImp!.description}
         kewords={getSeoImp!.keywords}
       />
-      <div>
-        <section>
-          <p>Hola1</p>
-        </section>
-        <section>
-          <p>Hola2</p>
-        </section>
-        <section>
-          <p>Hola3</p>
-        </section>
-      </div>
+      <HomeLayout />
+      <WorkExperience />
     </>
   );
 };

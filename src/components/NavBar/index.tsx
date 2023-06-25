@@ -30,7 +30,7 @@ export const NavBarComponent = () => {
     });
   };
   return (
-    <nav className="px-5 w-full flex items-center justify-between gap-4 nav effect">
+    <nav className="px-5 w-full flex items-center justify-between gap-4 nav effect z-10">
       <div className="flex items-center justify-start gap-4">
         {/* Logo and links */}
         <div>

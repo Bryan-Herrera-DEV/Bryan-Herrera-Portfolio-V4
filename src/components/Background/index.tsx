@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Image from "next/image";
-import { backgroundImage, firstNeonImage, secondNeonImage } from "@/assets";
+import { firstNeonImage, secondNeonImage } from "./../../assets";
 interface BackgroundComponentProps {
   children: ReactNode;
   navComponent: ReactNode;
@@ -11,7 +11,9 @@ const BackgroundComponent = ({
   navComponent,
 }: BackgroundComponentProps) => {
   return (
-    <main className="bg-baseBackground w-full h-screen flex justify-center items-start pt-2">
+    <main className="bg-baseBackground w-full h-full flex justify-center items-start pt-2">
+      <div className="absolute inset-0 bg-textured bg-center"></div>
+     
       <div
         className="fist-neon"
         style={{ opacity: 1, transform: "perspective(500px)" }}
@@ -58,7 +60,7 @@ const BackgroundComponent = ({
           </div>
         </div>
       </div>
-      <div className="w-full max-w-[800px]">
+      <div className="w-full max-w-[1100px]">
         <div className="w-full">
           {/* Sections Div */}
           {navComponent}
@@ -66,7 +68,7 @@ const BackgroundComponent = ({
         </div>
       </div>
 
-      <div
+      {/* <div
         className="second-neon"
         style={{ opacity: 1, transform: "perspective(1200px)" }}
       >
@@ -111,22 +113,7 @@ const BackgroundComponent = ({
             />
           </div>
         </div>
-      </div>
-
-      <div className="texture">
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundSize: "128px",
-            backgroundRepeat: "repeat",
-            backgroundImage:
-            `url(${backgroundImage})`,
-            opacity: 0.5,
-            borderRadius: 0,
-          }}
-        ></div>
-      </div>
+      </div> */}
     </main>
   );
 };

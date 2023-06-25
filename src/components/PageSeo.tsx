@@ -35,6 +35,8 @@ export const PageSeo = ({ title, description, keywords }: PageSeoProps) => {
       <meta name="description" content={description || ""} />
 
       <meta name="keywords" content={Array.isArray(keywords) ? keywords.join(",") : keywords!} />
+
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ayu15/static-assets@master/js/tag-cloud.min.js"></script>
     </Head>
   );
 };
