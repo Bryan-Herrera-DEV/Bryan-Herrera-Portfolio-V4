@@ -37,3 +37,32 @@ export const routesContstants: RoutesConstants = {
         ["/contact", "Contact"]
     ]
 };
+
+/**
+ * @description Constantes de las tecnologías
+ */
+
+export const TAGS: string[] = [
+    "Git",
+    "JSON",
+    "HTML",
+    "React",
+    "Python",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Next.js",
+    "Express",
+    "MongoDB",
+    "SQL",
+    "MySQL",
+    "PostgreSQL",
+    "GraphQL",
+    "Apollo",
+    "Prisma",
+    "Angular",
+    "Redux",
+    "Zustand",
+  ];
+  

@@ -33,24 +33,26 @@ const HomeLayout = () => {
               >
                 I build amazing things for the web
               </p>
-              <p className="mt-3 text-2xl tracking-tight text-slate-400">
-                Full Stack developer, digital craftsman with over 5 years
-                forging exceptional web experiences with Angular, React,
-                Node.js, and more. With my deep knowledge in backend and
-                scalable architecture patterns like DDD, I'm ready to elevate
-                your projects to new heights
+              <p className="mt-3 text-xl tracking-tight text-slate-400">
+                I am a highly skilled Full Stack Developer with 6 years of
+                experience. I excel in backend and frontend development, and
+                possess knowledge in various utilities and programming
+                languages. I have actively contributed to open source projects
+                and have experience in implementing good architectures such as
+                DDD.
                 <span className="selected-text">
                   let's make digital magic together!/
                 </span>
               </p>
             </div>
-            <a 
-            href="/CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Go to ${inmutableConstants.NOMBRE} resume`}
-            title={`Go to ${inmutableConstants.NOMBRE} resume`}
-            className="rounded-full bg-slate-800 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 active:text-slate-400">
+            <a
+              href="/CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Go to ${inmutableConstants.NOMBRE} resume`}
+              title={`Go to ${inmutableConstants.NOMBRE} resume`}
+              className="rounded-full bg-slate-800 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 active:text-slate-400"
+            >
               My Resume
             </a>
           </div>
