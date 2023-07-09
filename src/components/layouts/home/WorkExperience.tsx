@@ -1,96 +1,107 @@
-import { TAGS } from "@/shared/constants";
-import React, { ReactNode, useState, useEffect } from "react";
-const DURATION = 15000;
-const ROWS = 5;
-const TAGS_PER_ROW = 5;
+const experiences: [string, Date, Date][] = [
+  ["Experiencia 1", new Date("2019-02"), new Date("2020-07")],
+  ["Experiencia 2", new Date("2020-08"), new Date("2021-07")],
+  ["Experiencia 3", new Date("2021-07"), new Date("2022-07")],
+  ["Experiencia 3", new Date("2019-07"), new Date("2023-12")],
+  // y así sucesivamente
+];
 
-const random = (min: number, max: number): number =>
-  Math.floor(Math.random() * (max - min)) + min;
-const shuffle = (arr: string[]): string[] =>
-  [...arr].sort(() => 0.5 - Math.random());
+const startYear = 2019;
 
-interface InfiniteLoopSliderProps {
-  children: ReactNode;
-  duration: number;
-  reverse?: boolean | undefined | null | number;
-}
+function GanttItem({
+  experience,
+  totalMonths,
+  barHeight,
+}: {
+  experience: [string, Date, Date];
+  totalMonths: number;
+  barHeight: number;
+}) {
+  const startMonth =
+    (experience[1].getFullYear() - startYear) * 12 + experience[1].getMonth();
+  const endMonth =
+    (experience[2].getFullYear() - startYear) * 12 + experience[2].getMonth();
+  const length = endMonth - startMonth;
 
-const InfiniteLoopSlider: React.FC<InfiniteLoopSliderProps> = ({
-  children,
-  duration,
-  reverse = false,
-}: InfiniteLoopSliderProps) => {
+  const startPercent = (startMonth / totalMonths) * 100;
+  const lengthPercent = (length / totalMonths) * 100;
+
   return (
-    <div
-      className="loop-slider"
-      style={{
-        "--duration": `${duration}ms`,
-        "--direction": reverse ? "reverse" : "normal",
-      }}
-    >
-      <div className="inner">
-        {children}
-        {children}
-      </div>
-    </div>
-  );
-};
-
-interface TagProps {
-  text: string;
-  cl: string;
-}
-
-const Tag: React.FC<TagProps> = ({ text, cl }) => (
-  <div className={`tag ${cl}`}>
-    <span>#</span> {text}
-  </div>
-);
-
-const WorkExperience = () => {
-  const [rows, setRows] = useState<string[][]>(Array(ROWS).fill([]));
-
-  useEffect(() => {
-    const newRows = rows.map((_, i) => shuffle(TAGS).slice(0, TAGS_PER_ROW));
-    setRows(newRows);
-  }, []);
-  return (
-    <div className="">
-      <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
-        <div className="mx-auto grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:max-w-8xl lg:grid-cols-2 xl:gap-x-16">
-          <div className="tag-list">
-            {rows.map((_, i) => (
-              <InfiniteLoopSlider
-                key={i}
-                duration={random(DURATION - 5000, DURATION + 5000)}
-                reverse={i % 2}
-              >
-                {shuffle(TAGS)
-                  .slice(0, TAGS_PER_ROW)
-                  .map((tag, i) => (
-                    <Tag text={tag} key={tag} cl={i % 2 ? "red" : "yll"} />
-                  ))}
-              </InfiniteLoopSlider>
-            ))}
-            <div className="fade" />
-          </div>
-          <div className="relative z-10 md:text-center lg:text-left">
-            <div className="relative mb-4">
-              <p
-                className="inline bg-gradient-to-r from-indigo-200 via-baseRedColor to-baseYellowColor bg-clip-text font-display text-5xl tracking-tight text-transparent
-              "
-              >
-                My Tech Stack
-              </p>
-              <p className="mt-3 text-xl tracking-tight text-slate-400">
-              At the epicenter of digital innovation, every technology I use is a crucial component in orchestrating high-quality solutions. This is my sample of the essential skills and elements that converge to form a robust skillset of skills.
-              </p>
-            </div>
+    <div className="flex items-center my-4" style={{ height: `${barHeight}%` }}>
+      <div className="w-full ml-32">
+        <div className="bg-gray-200 rounded-full h-4 relative">
+          <div
+            className="bg-blue-500 rounded-full h-4"
+            style={{
+              marginLeft: `${startPercent}%`,
+              width: `${lengthPercent}%`,
+            }}
+          >
+            <span className="absolute text-xs left-0 ml-2">
+            </span>
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+function YearLabel({
+  year,
+  totalMonths,
+}: {
+  year: number;
+  totalMonths: number;
+}) {
+  const yearStartMonth = (year - startYear) * 12;
+  const yearStartPercent = (yearStartMonth / totalMonths) * 100;
+
+  return (
+    <div
+      className="absolute mb-2 text-xs text-violet-50"
+      style={{ marginLeft: `${yearStartPercent}%` }}
+    >
+      {year}
+    </div>
+  );
+}
+
+function GanttChart({ experiences }: { experiences: [string, Date, Date][] }) {
+  let lastYear = experiences.reduce((latest, exp) => {
+    const year = exp[2].getFullYear();
+    return year > latest ? year : latest;
+  }, startYear);
+
+  // Si el año actual es posterior al último año de experiencia, utilízalo
+  const endYear = Math.max(lastYear, new Date().getFullYear()) + 1;
+
+  // luego usa endYear en lugar de new Date().getFullYear() para calcular el total de meses
+  const totalMonths = (endYear - startYear) * 12;
+
+  // calculamos la altura que debería tener cada barra
+  const barHeight = 100 / experiences.length;
+
+  return (
+    <div className="container mx-auto relative">
+      {experiences.map((experience, index) => (
+        <GanttItem
+          key={index}
+          experience={experience}
+          totalMonths={totalMonths}
+          barHeight={barHeight}
+        />
+      ))}
+      <div className="w-full absolute bottom-0 left-0 ml-32 pt-1">
+        {[...Array(endYear - startYear + 1)].map((_, i) => (
+          <YearLabel key={i} year={startYear + i} totalMonths={totalMonths} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const WorkExperience = () => {
+  return <GanttChart experiences={experiences} />;
 };
 
 export default WorkExperience;

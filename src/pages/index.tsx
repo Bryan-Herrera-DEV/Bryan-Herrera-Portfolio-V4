@@ -1,5 +1,6 @@
 import { PageSeo } from "@/components/PageSeo";
 import HomeLayout from "@/components/layouts/home";
+import TechStack from "@/components/layouts/home/TechStack";
 import WorkExperience from "@/components/layouts/home/WorkExperience";
 import { getSEO } from "@/shared/seoData";
 
@@ -13,6 +14,7 @@ const index = () => {
         kewords={getSeoImp!.keywords}
       />
       <HomeLayout />
+      <TechStack />
       <WorkExperience />
     </>
   );

@@ -190,7 +190,7 @@ pre[class*=language-] {
   background-color: rgb(30 41 59);
   border-radius: 0.4rem;
   padding: 0.4rem 1rem;
-  margin-right: 1rem; // Must used margin-right instead of gap for the loop to be smooth
+  margin-right: 1rem;
   box-shadow:
     0 0.1rem 0.2rem rgb(0 0 0 / 20%),
     0 0.1rem 0.5rem rgb(0 0 0 / 30%),
@@ -231,3 +231,6 @@ pre[class*=language-] {
     transform: translateX(-50%);
   }
 }
+
+
+

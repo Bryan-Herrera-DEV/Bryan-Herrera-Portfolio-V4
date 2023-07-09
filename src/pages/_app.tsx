@@ -1,5 +1,6 @@
-import type { AppProps } from "next/app";
 import "@/styles/globals.scss";
+import "@/styles/timeline.scss";
+import type { AppProps } from "next/app";
 import BackgroundComponent from "@/components/Background";
 import { NavBarComponent } from "@/components/NavBar";
 
