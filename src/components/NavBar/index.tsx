@@ -39,8 +39,7 @@ export const NavBarComponent = () => {
             alt="Bryan Herrera Dev Logo"
             aria-label="Bryan Herrera Dev Logo"
             title="Bryan Herrera Dev Logo"
-            width={21}
-            height={26}
+            className="w-[21px] h-[26px]"
             priority
           />
         </div>

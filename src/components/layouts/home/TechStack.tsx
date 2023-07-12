@@ -3,9 +3,6 @@ import React, { ReactNode, useState, useEffect } from "react";
 const DURATION = 15000;
 const ROWS = 5;
 const TAGS_PER_ROW = 5;
-
-const random = (min: number, max: number): number =>
-  Math.floor(Math.random() * (max - min)) + min;
 const shuffle = (arr: string[]): string[] =>
   [...arr].sort(() => 0.5 - Math.random());
 
@@ -13,22 +10,24 @@ interface InfiniteLoopSliderProps {
   children: ReactNode;
   duration: number;
   reverse?: boolean | undefined | null | number;
+  uniqueKey?: string | number; // Agregamos esto
 }
 
 const InfiniteLoopSlider: React.FC<InfiniteLoopSliderProps> = ({
   children,
   duration,
   reverse = false,
+  uniqueKey,
 }: InfiniteLoopSliderProps) => {
   return (
-    <div
-      className="loop-slider"
-      style={{
-        "--duration": `${duration}ms`,
-        "--direction": reverse ? "reverse" : "normal",
-      }}
-    >
-      <div className="inner">
+    <div className={"loop-slider"} key={`${uniqueKey}tag`}>
+      <div
+        className="inner"
+        style={{
+          animationDuration: `${duration}ms`,
+          animationDirection: reverse ? "reverse" : "normal",
+        }}
+      >
         {children}
         {children}
       </div>
@@ -42,16 +41,16 @@ interface TagProps {
 }
 
 const Tag: React.FC<TagProps> = ({ text, cl }) => (
-  <div className={`tag ${cl}`}>
-    <span>#</span> {text}
-  </div>
+  <p className={`tag ${cl}`}>
+      <span>#</span> {text}
+  </p>
 );
 
 const WorkExperience = () => {
   const [rows, setRows] = useState<string[][]>(Array(ROWS).fill([]));
 
   useEffect(() => {
-    const newRows = rows.map((_, i) => shuffle(TAGS).slice(0, TAGS_PER_ROW));
+    const newRows = rows.map((_, i) => shuffle(TAGS));
     setRows(newRows);
   }, []);
   return (
@@ -61,16 +60,17 @@ const WorkExperience = () => {
           <div className="tag-list">
             {rows.map((_, i) => (
               <InfiniteLoopSlider
-                key={i}
-                duration={random(DURATION - 5000, DURATION + 5000)}
-                reverse={i % 2}
-              >
-                {shuffle(TAGS)
-                  .slice(0, TAGS_PER_ROW)
-                  .map((tag, i) => (
-                    <Tag text={tag} key={tag} cl={i % 2 ? "red" : "yll"} />
-                  ))}
-              </InfiniteLoopSlider>
+              duration={50000}
+              reverse={i % 2}
+              uniqueKey={i}
+              key={`${i}tagLoop`}
+            >
+              {rows[i]
+                .slice(0, TAGS_PER_ROW)
+                .map((tag, iD) => (
+                  <Tag text={tag} key={iD} cl={i % 2 ? "red" : "yll"} />
+                ))}
+            </InfiniteLoopSlider>
             ))}
             <div className="fade" />
           </div>
@@ -83,7 +83,10 @@ const WorkExperience = () => {
                 My Tech Stack
               </p>
               <p className="mt-3 text-xl tracking-tight text-slate-400">
-              At the epicenter of digital innovation, every technology I use is a crucial component in orchestrating high-quality solutions. This is my sample of the essential skills and elements that converge to form a robust skillset of skills.
+                At the epicenter of digital innovation, every technology I use
+                is a crucial component in orchestrating high-quality solutions.
+                This is my sample of the essential skills and elements that
+                converge to form a robust skillset of skills.
               </p>
             </div>
           </div>

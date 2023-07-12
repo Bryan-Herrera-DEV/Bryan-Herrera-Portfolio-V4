@@ -176,8 +176,6 @@ pre[class*=language-] {
     animation-name: loop;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-direction: var(--direction);
-    animation-duration: var(--duration);
   }
 }
 
@@ -232,5 +230,6 @@ pre[class*=language-] {
   }
 }
 
-
-
+.tooltip {
+  display: block!important;
+}

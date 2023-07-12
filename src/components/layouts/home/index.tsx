@@ -45,6 +45,7 @@ const HomeLayout = () => {
                 </span>
               </p>
             </div>
+            <p>
             <a
               href="/CV.pdf"
               target="_blank"
@@ -55,6 +56,7 @@ const HomeLayout = () => {
             >
               My Resume
             </a>
+            </p>
           </div>
           <div className="relative lg:static xl:pl-10">
             <div className="absolute inset-x-[-50vw] -bottom-48 -top-32 [mask-image:linear-gradient(transparent,white,white)] dark:[mask-image:linear-gradient(transparent,white,transparent)] lg:-bottom-32 lg:-top-32 lg:left-[calc(50%+14rem)] lg:right-0 lg:[mask-image:none] lg:dark:[mask-image:linear-gradient(white,white,transparent)]">
@@ -67,7 +69,7 @@ const HomeLayout = () => {
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:translate-x-0 lg:translate-y-[-60%]"
               >
                 <defs>
-                  <clipPath id=":R1l6:-clip-path">
+                  <clipPath id=":R1l6:-clipPath">
                     <path
                       fill="#fff"
                       transform="rotate(-180 334 534.4)"
@@ -77,8 +79,8 @@ const HomeLayout = () => {
                 </defs>
                 <g
                   opacity=".4"
-                  clip-path="url(#:R1l6:-clip-path)"
-                  stroke-width="4"
+                  clipPath="url(#:R1l6:-clipPath)"
+                  strokeWidth="4"
                 >
                   <path
                     opacity=".3"
@@ -145,7 +147,7 @@ const HomeLayout = () => {
                     r="10.438"
                     transform="rotate(-180 484.301 574.062)"
                     fill="#0EA5E9"
-                    fill-opacity=".42"
+                    fillOpacity=".42"
                     stroke="#0EA5E9"
                   ></circle>
                   <circle
@@ -198,9 +200,9 @@ const HomeLayout = () => {
                     cy="484.3"
                     r="10.438"
                     transform="rotate(-180 83.5 484.3)"
-                    fill="#0EA5E9"
-                    fill-opacity=".42"
-                    stroke="#0EA5E9"
+                    fillOpacity=".42"
+                    fill="#1E293B"
+                    stroke="#ff445e"
                   ></circle>
                   <circle
                     cx="484.301"
@@ -263,12 +265,12 @@ const HomeLayout = () => {
                   <div className="mt-4 flex space-x-2 text-xs">
                     <div className="flex h-6 rounded-full bg-gradient-to-r from-baseYellowColor/30 via-baseRedColor to-baseYellowColor/30 p-px font-medium text-baseYellowColor">
                       <div className="flex items-center rounded-full px-2.5 bg-slate-800">
-                        my-information.js
+                        <p>my-information.js</p>
                       </div>
                     </div>
                     <div className="flex h-6 rounded-full text-slate-500">
                       <div className="flex items-center rounded-full px-2.5">
-                        package.json
+                        <p>package.json</p>
                       </div>
                     </div>
                   </div>
@@ -278,13 +280,13 @@ const HomeLayout = () => {
                       className="select-none border-r border-slate-300/5 pr-4 font-mono text-slate-600"
                     >
                       {code.split("\n").map((_, index) => (
-                        <p>
+                        <p key={index}>
                           0{index + 1} <br />
                         </p>
                       ))}
                     </div>
-                    <pre className="prism-code language-javascript flex overflow-x-auto pb-6">
-                      <code className="px-4">{code}</code>
+                    <pre className="prism-code flex overflow-x-auto pb-6 language-javascript" tabIndex={0}>
+                      <code className="language-javascript">{code}</code>
                     </pre>
                   </div>
                 </div>

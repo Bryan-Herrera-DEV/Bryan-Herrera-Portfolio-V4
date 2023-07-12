@@ -5,12 +5,23 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
+  },
   theme: {
     extend: {
       colors: {
         baseBackground: 'rgb(10, 10, 13)',
         baseRedColor: 'rgb(255, 68, 94)',
         baseYellowColor: 'rgb(248, 194, 49)',
+        baePinkColor: 'rgb(255, 68, 233)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -23,5 +34,5 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
