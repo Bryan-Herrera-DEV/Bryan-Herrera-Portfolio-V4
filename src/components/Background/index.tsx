@@ -13,11 +13,7 @@ const BackgroundComponent = ({
   return (
     <main className="bg-baseBackground w-full h-full flex justify-center items-start pt-2">
       <div className="absolute inset-0 bg-textured bg-center"></div>
-     
-      <div
-        className="fist-neon"
-        style={{ opacity: 1, transform: "perspective(500px)" }}
-      >
+  
         <div
           style={{
             position: "absolute",
@@ -58,7 +54,6 @@ const BackgroundComponent = ({
               priority
             />
           </div>
-        </div>
       </div>
       <div className="w-full max-w-[1100px]">
         <div className="w-full">

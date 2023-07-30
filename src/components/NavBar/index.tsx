@@ -13,7 +13,7 @@ export const NavBarComponent = () => {
       const route = value[0];
       const isRouteSelected = currentPath === route[0];
       return (
-        <li key={route[1]}>
+        <li key={route[1]} className="inline-block">
           <Link href={route[0]} aria-label={`Go to ${route[1]} page`}>
             <span
               className={
@@ -32,7 +32,6 @@ export const NavBarComponent = () => {
   return (
     <nav className="px-5 w-full flex items-center justify-between gap-4 nav effect z-10">
       <div className="flex items-center justify-start gap-4">
-        {/* Logo and links */}
         <div>
           <Image
             src={BryanHerreraLogo}
@@ -50,7 +49,7 @@ export const NavBarComponent = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-start gap-4">
+      <div className="items-center justify-start gap-4 hidden md:flex">
         <SocialMediaComponent typeOfRender="onlyIcons" />
       </div>
     </nav>

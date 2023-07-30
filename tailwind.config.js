@@ -34,5 +34,19 @@ module.exports = {
       }
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.grid-col-1-2': {
+          gridColumn: '1 / 2',
+        },
+        '.grid-row-1-2': {
+          gridRow: '1 / 2',
+        },
+      }
+
+      addUtilities(newUtilities)
+    }
+  ],
 }
