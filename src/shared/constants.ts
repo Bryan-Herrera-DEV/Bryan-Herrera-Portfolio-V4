@@ -61,8 +61,8 @@ export const TAGS: string[] = [
  * @description Constantes del workexperience
  */
 export const experiences: [string, Date, Date][] = [
-    ["Experiencia 1", new Date("2019-02"), new Date("2020-07")],
-    ["Experiencia 2", new Date("2020-08"), new Date("2021-07")],
-    ["Experiencia 5.5", new Date("2021-07"), new Date("2022-07")],
-    ["Experiencia 3\njaja", new Date("2019-07"), new Date("2023-11")]
+    ["EME - Senior Full Stack Developer", new Date("2021-11"), new Date("2022-07")],
+    ["Fulltimeforce - Senior Full Stack Developer", new Date("2022-10"), new Date("2023-05")],
+    ["MTC CORP - Senior Full Stack Developer", new Date("2023-05"), new Date()],
+    ["Freelance Dev", new Date("2020-01"), new Date()]
 ];
