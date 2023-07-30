@@ -1,4 +1,4 @@
-export const LinkedSvgIcon = ({ size, key, className = "" }: IconProps) => {
+export const LinkedSvgIcon = ({ size, key }: IconProps) => {
   return (
     <svg
       width={size?.width || "24px"}
