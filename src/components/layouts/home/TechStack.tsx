@@ -73,11 +73,11 @@ const WorkExperience = () => {
           </div>
           <div className="relative z-10 md:text-center lg:text-left max-md:grid-col-1-2 max-md:grid-row-1-2">
             <div className="relative mb-4">
-              <p
+              <h2
                 className="inline bg-gradient-to-r from-indigo-200 via-baseRedColor to-baseYellowColor bg-clip-text font-display text-5xl tracking-tight text-transparent"
               >
                 My Tech Stack
-              </p>
+              </h2>
               <p className="mt-3 text-xl tracking-tight text-slate-400">
                 At the epicenter of digital innovation, every technology I use
                 is a crucial component in orchestrating high-quality solutions.

@@ -17,7 +17,7 @@ function ExperienceBox({
   setFocus,
   removeFocus,
   focusIndex,
-}: ExperienceBoxProps ) {
+}: ExperienceBoxProps) {
   return (
     <div
       className={`btn-Custom draw-border
@@ -56,7 +56,7 @@ export function GanttChart({
           display: "grid",
           gap: "1rem",
           gridTemplateColumns:
-          "repeat(auto-fill, minmax(min(100%, 15rem), 1fr))",
+            "repeat(auto-fill, minmax(min(100%, 15rem), 1fr))",
           gridAutoFlow: "dense",
           padding: "1rem",
         }}
@@ -72,29 +72,31 @@ export function GanttChart({
           />
         ))}
       </div>
-      {experiences.map((experience, index) => (
-        <GanttItem
-          key={index}
-          experience={experience}
-          totalMonths={totalMonths}
-          barHeight={barHeight}
-          setFocus={() => setFocusIndex(index)}
-          removeFocus={() => setFocusIndex(null)}
-          focusIndex={focusIndex}
-          index={index}
-          startYear={startYear}
-        />
-      ))}
-      <div className="w-full mb-16">
-        {[...Array(endYear - startYear + 1)].map((_, i) => (
-          <YearLabel
-            key={i}
-            year={startYear + i}
+      <div className="max-md:hidden">
+        {experiences.map((experience, index) => (
+          <GanttItem
+            key={index}
+            experience={experience}
             totalMonths={totalMonths}
+            barHeight={barHeight}
+            setFocus={() => setFocusIndex(index)}
+            removeFocus={() => setFocusIndex(null)}
             focusIndex={focusIndex}
+            index={index}
             startYear={startYear}
           />
         ))}
+        <div className="w-full mb-16">
+          {[...Array(endYear - startYear + 1)].map((_, i) => (
+            <YearLabel
+              key={i}
+              year={startYear + i}
+              totalMonths={totalMonths}
+              focusIndex={focusIndex}
+              startYear={startYear}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

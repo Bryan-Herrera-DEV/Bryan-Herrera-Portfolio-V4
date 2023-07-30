@@ -27,12 +27,12 @@ const HomeLayout = () => {
         <div className="mx-auto grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:max-w-8xl lg:grid-cols-2 xl:gap-x-16">
           <div className="relative z-10 md:text-center lg:text-left">
             <div className="relative mb-4">
-              <p
+              <h1
                 className="inline bg-gradient-to-r from-indigo-200 via-baseRedColor to-baseYellowColor bg-clip-text font-display text-5xl tracking-tight text-transparent
               "
               >
                 I build amazing things for the web
-              </p>
+              </h1>
               <p className="mt-3 text-xl tracking-tight text-slate-400">
                 I am a highly skilled Full Stack Developer with 6 years of
                 experience. I excel in backend and frontend development, and
