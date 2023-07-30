@@ -8,6 +8,26 @@
 section {
   padding: 0px 20px;
 }
+/* Esto aplica a todo el documento */
+::-webkit-scrollbar {
+  width: 7px; /* Anchura del scrollbar */
+}
+
+/* Track del scrollbar */
+::-webkit-scrollbar-track {
+  background: rgb(10, 10, 13); /* Color de fondo del track */
+}
+
+/* Handle del scrollbar */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 68, 94, .2); /* Color de fondo del handle */
+  border-radius: 3px; /* Redondea las esquinas del handle */
+}
+
+/* Handle del scrollbar al pasar el ratón por encima */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cambia el color del handle al pasar el ratón por encima */
+}
 .nav {
   --border-bottom-width: 1px;
   --border-color: rgba(82, 82, 82, .2);
