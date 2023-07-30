@@ -19,7 +19,7 @@ function ExperienceBox({
 }) {
   return (
     <div
-      className={`bg-gray-200 p-4 m-2 rounded transition-opacity duration-200 block
+      className={`btn-Custom draw-border
       ${focusIndex !== null && index !== focusIndex ? "opacity-50" : ""}`}
       onMouseEnter={() => setFocus(index)}
       onMouseLeave={removeFocus}

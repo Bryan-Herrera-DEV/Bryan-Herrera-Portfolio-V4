@@ -42,7 +42,7 @@ interface TagProps {
 
 const Tag: React.FC<TagProps> = ({ text, cl }) => (
   <p className={`tag ${cl}`}>
-      <span>#</span> {text}
+    <span>#</span> {text}
   </p>
 );
 
@@ -54,31 +54,28 @@ const WorkExperience = () => {
     setRows(newRows);
   }, []);
   return (
-    <div className="">
+    <section className="">
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
         <div className="mx-auto grid grid-cols-1 md:revers items-center gap-x-8 gap-y-16 lg:max-w-8xl lg:grid-cols-2 xl:gap-x-16">
           <div className="tag-list" id="a">
             {rows.map((_, i) => (
               <InfiniteLoopSlider
-              duration={50000}
-              reverse={i % 2}
-              uniqueKey={i}
-              key={`${i}tagLoop`}
-            >
-              {rows[i]
-                .slice(0, TAGS_PER_ROW)
-                .map((tag, iD) => (
+                duration={50000}
+                reverse={i % 2}
+                uniqueKey={i}
+                key={`${i}tagLoop`}
+              >
+                {rows[i].slice(0, TAGS_PER_ROW).map((tag, iD) => (
                   <Tag text={tag} key={iD} cl={i % 2 ? "red" : "yll"} />
                 ))}
-            </InfiniteLoopSlider>
+              </InfiniteLoopSlider>
             ))}
             <div className="fade" />
           </div>
-          <div className="relative z-10 md:text-center lg:text-left grid-col-1-2 grid-row-1-2">
+          <div className="relative z-10 md:text-center lg:text-left max-md:grid-col-1-2 max-md:grid-row-1-2">
             <div className="relative mb-4">
               <p
-                className="inline bg-gradient-to-r from-indigo-200 via-baseRedColor to-baseYellowColor bg-clip-text font-display text-5xl tracking-tight text-transparent
-              "
+                className="inline bg-gradient-to-r from-indigo-200 via-baseRedColor to-baseYellowColor bg-clip-text font-display text-5xl tracking-tight text-transparent"
               >
                 My Tech Stack
               </p>
@@ -92,7 +89,7 @@ const WorkExperience = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

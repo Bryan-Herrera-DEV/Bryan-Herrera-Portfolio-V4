@@ -34,6 +34,7 @@ export const PageSeo = ({ title, description, keywords }: PageSeoProps) => {
       <meta name="description" content={description || ""} />
 
       <meta name="keywords" content={Array.isArray(keywords) ? keywords.join(",") : keywords!} />
+      <meta name="theme-color" content="#0a0a0d"/>
     </Head>
   );
 };

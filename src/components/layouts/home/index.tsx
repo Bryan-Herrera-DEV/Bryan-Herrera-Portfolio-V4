@@ -22,7 +22,7 @@ const HomeLayout = () => {
     Prism.highlightAll();
   }, []);
   return (
-    <div className="overflow-hidden dark:-mb-32 dark:mt-[-4.5rem] dark:pb-32 dark:pt-[4.5rem] dark:lg:mt-[-4.75rem] dark:lg:pt-[4.75rem]">
+    <section className="overflow-hidden dark:-mb-32 dark:mt-[-4.5rem] dark:pb-32 dark:pt-[4.5rem] dark:lg:mt-[-4.75rem] dark:lg:pt-[4.75rem]">
       <div className="py-16 sm:px-2 lg:relative lg:px-0 lg:py-20">
         <div className="mx-auto grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:max-w-8xl lg:grid-cols-2 xl:gap-x-16">
           <div className="relative z-10 md:text-center lg:text-left">
@@ -295,7 +295,7 @@ const HomeLayout = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

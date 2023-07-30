@@ -13,7 +13,7 @@ type RouteKey = keyof RoutesConstants;
 const seoByRoute: Record<RouteKey, SEO> = {
     HOME: {
         title: `${inmutableConstants.NOMBRE} | ${routesContstants.HOME[0][1]}`,
-        description: `Hola, soy ${inmutableConstants.NOMBRE}, un desarrollador Full-Stack apasionado y experimentado. Explora mi portafolio para ver mis proyectos más recientes y descubre cómo mis habilidades técnicas y soluciones creativas pueden dar vida a tu próximo proyecto digital.`,
+        description: `${inmutableConstants.NOMBRE}, un desarrollador Full-Stack apasionado y experimentado. Explora mi portafolio para ver mis proyectos más recientes y descubre cómo mis habilidades técnicas y soluciones creativas pueden dar vida a tu próximo proyecto digital.`,
         keywords: ["Bryan Herrera Desarrollador Full-Stack",
             "Portafolio Bryan Herrera",
             "Especialista Full-Stack",
