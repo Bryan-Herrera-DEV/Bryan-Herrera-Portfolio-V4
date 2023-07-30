@@ -24,17 +24,7 @@ const seoByRoute: Record<RouteKey, SEO> = {
             "Programación Full-Stack Front-End y Back-End",
             "Desarrollo profesional de aplicaciones web",
             "Soluciones integrales de desarrollo web Full-Stack"],
-    },
-    ABOUT: {
-        title: `${inmutableConstants.NOMBRE} | ${routesContstants.ABOUT[0][1]}`,
-        description: "Conoce más sobre mí",
-        keywords: ["acerca de", "quién soy", "experiencia"],
-    },
-    CONTACT: {
-        title: `${inmutableConstants.NOMBRE} | ${routesContstants.CONTACT[0][1]}`,
-        description: "Ponte en contacto conmigo",
-        keywords: ["contacto", "correo electrónico", "formulario de contacto"],
-    },
+    }
 };
 
 // Función para obtener los metadatos de SEO de una ruta específica

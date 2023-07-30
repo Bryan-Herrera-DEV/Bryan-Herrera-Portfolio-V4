@@ -37,11 +37,9 @@ const HomeLayout = () => {
                 I am a highly skilled Full Stack Developer with 6 years of
                 experience. I excel in backend and frontend development, and
                 possess knowledge in various utilities and programming
-                languages. I have actively contributed to open source projects
-                and have experience in implementing good architectures such as
-                DDD.
+                languages.
                 <span className="selected-text">
-                  let&apos;s make digital magic together!/
+                  let&apos;s make digital magic together!
                 </span>
               </p>
             </div>
