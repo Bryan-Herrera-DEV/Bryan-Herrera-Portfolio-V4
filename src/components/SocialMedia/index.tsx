@@ -32,7 +32,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
             width: 24,
             height: 24,
           }}
-          className={`hover:fill-white fill-gray-300 transition duration-200`}
+          className={"hover:fill-white fill-gray-300 transition duration-200"}
         />
       ),
       name: "Dev.to",
@@ -47,7 +47,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
             width: 24,
             height: 24,
           }}
-          className={`hover:stroke-white stroke-gray-300 transition duration-200`}
+          className={"hover:stroke-white stroke-gray-300 transition duration-200"}
         />
       ),
       name: "Github",
@@ -62,7 +62,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
             width: 24,
             height: 24,
           }}
-          className={`hover:stroke-white stroke-gray-300 transition duration-200`}
+          className={"hover:stroke-white stroke-gray-300 transition duration-200"}
         />
       ),
       name: "LinkedIn",
@@ -77,7 +77,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
             width: 24,
             height: 24,
           }}
-          className={`hover:stroke-white stroke-gray-300 transition duration-200`}
+          className={"hover:stroke-white stroke-gray-300 transition duration-200"}
           color="#d1d5db"
         />
       ),
@@ -93,7 +93,7 @@ export const SocialMediaComponent = ({ typeOfRender }: SocialMediaProps) => {
             width: 24,
             height: 24,
           }}
-          className={`hover:stroke-white stroke-gray-300 transition duration-200`}
+          className={"hover:stroke-white stroke-gray-300 transition duration-200"}
           color="#d1d5db"
         />
       ),

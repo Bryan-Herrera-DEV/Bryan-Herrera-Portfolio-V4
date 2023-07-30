@@ -1,6 +1,5 @@
 export const DevToSvgIcon = ({
   size,
-  color = "white",
   key,
   className = ""
 }: IconProps) => {

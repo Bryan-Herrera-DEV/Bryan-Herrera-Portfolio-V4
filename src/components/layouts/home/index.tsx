@@ -41,7 +41,7 @@ const HomeLayout = () => {
                 and have experience in implementing good architectures such as
                 DDD.
                 <span className="selected-text">
-                  let's make digital magic together!/
+                  let&apos;s make digital magic together!/
                 </span>
               </p>
             </div>

@@ -14,7 +14,7 @@ startYear: number;
 
   return (
     <div
-      className={`absolute mb-2 text-xs text-violet-50 transition-opacity duration-200  ${focusIndex !== null ? 'opacity-20' : 'opacity-100'}`}
+      className={`absolute mb-2 text-xs text-violet-50 transition-opacity duration-200  ${focusIndex !== null ? "opacity-20" : "opacity-100"}`}
       style={{ marginLeft: `${yearStartPercent}%` }}
     >
       <p>{year}</p>

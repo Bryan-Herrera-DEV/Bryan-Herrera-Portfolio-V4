@@ -9,7 +9,7 @@ export const NavBarComponent = () => {
   const router = useRouter();
   const currentPath = router.pathname;
   const renderRoutes = () => {
-    return Object.entries(routesContstants).map(([_, value], i) => {
+    return Object.entries(routesContstants).map(([_, value]) => {
       const route = value[0];
       const isRouteSelected = currentPath === route[0];
       return (

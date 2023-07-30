@@ -4,7 +4,7 @@
   "plugins": ["@typescript-eslint"],
   "extends": "next/core-web-vitals",
   "rules": {
-    "no-unused-vars": ["warn"],
+    "no-unused-vars": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "restrict-template-expressions": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
@@ -17,7 +17,7 @@
     "curly": "error",
     "no-empty": "error",
     // "@typescript-eslint/no-explicit-any": ["error", { "fixToUnknown": true }],
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": ["error",{ "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }],
     "semi": ["error", "always"],
     "no-trailing-spaces": ["error", { "ignoreComments": true }],
     "keyword-spacing": ["error", { "before": true }],

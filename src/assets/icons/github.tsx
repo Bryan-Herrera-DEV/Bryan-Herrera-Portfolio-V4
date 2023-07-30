@@ -1,6 +1,5 @@
 export const GithubSvgIcon = ({
   size,
-  color = "white",
   key,
   className = "",
 }: IconProps) => {

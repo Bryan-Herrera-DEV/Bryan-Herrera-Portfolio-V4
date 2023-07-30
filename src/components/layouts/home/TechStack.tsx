@@ -1,6 +1,5 @@
 import { TAGS } from "@/shared/constants";
 import React, { ReactNode, useState, useEffect } from "react";
-const DURATION = 15000;
 const ROWS = 5;
 const TAGS_PER_ROW = 5;
 const shuffle = (arr: string[]): string[] =>
@@ -50,7 +49,7 @@ const WorkExperience = () => {
   const [rows, setRows] = useState<string[][]>(Array(ROWS).fill([]));
 
   useEffect(() => {
-    const newRows = rows.map((_, i) => shuffle(TAGS));
+    const newRows = rows.map((_) => shuffle(TAGS));
     setRows(newRows);
   }, []);
   return (

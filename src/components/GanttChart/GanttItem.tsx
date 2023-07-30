@@ -3,6 +3,16 @@ import { useState } from "react";
 import { MonthLabel } from "./MonthLabel";
 import { Tooltip } from "./ToolTip";
 
+interface GanttItemProps {
+  experience: [string, Date, Date];
+  totalMonths: number;
+  barHeight: number;
+  setFocus: (k: number) => void;
+  removeFocus: () => void;
+  focusIndex: number | null;
+  index: number;
+  startYear: number;
+}
 export function GanttItem({
   experience,
   totalMonths,
@@ -12,16 +22,7 @@ export function GanttItem({
   focusIndex,
   index,
   startYear,
-}: {
-  experience: [string, Date, Date];
-  totalMonths: number;
-  barHeight: number;
-  setFocus: (index: number) => void;
-  removeFocus: () => void;
-  focusIndex: number | null;
-  index: number;
-  startYear: number;
-}) {
+}: GanttItemProps) {
   const startMonth =
     (experience[1].getFullYear() - startYear) * 12 + experience[1].getMonth();
   const endMonth =
@@ -53,7 +54,7 @@ export function GanttItem({
       <div className="w-full">
         <div className="h-4 relative">
           <div
-            className={`h-4 from-baseBackground to-baseRedColor relative  bg-gradient-to-r`}
+            className={"h-4 from-baseBackground to-baseRedColor relative  bg-gradient-to-r"}
             style={{
               marginLeft: `${startPercent}%`,
               width: `${lengthPercent}%`,

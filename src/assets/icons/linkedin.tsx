@@ -1,6 +1,5 @@
 export const LinkedSvgIcon = ({
   size,
-  color = "white",
   key,
   className = "",
 }: IconProps) => {

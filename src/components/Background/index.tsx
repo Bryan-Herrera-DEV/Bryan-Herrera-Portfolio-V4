@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Image from "next/image";
-import { firstNeonImage, secondNeonImage } from "./../../assets";
+import { firstNeonImage } from "./../../assets";
 interface BackgroundComponentProps {
   children: ReactNode;
   navComponent: ReactNode;
@@ -13,7 +13,6 @@ const BackgroundComponent = ({
   return (
     <main className="bg-baseBackground w-full h-full flex justify-center items-start pt-2">
       <div className="absolute inset-0 bg-textured bg-center"></div>
-  
         <div
           style={{
             position: "absolute",

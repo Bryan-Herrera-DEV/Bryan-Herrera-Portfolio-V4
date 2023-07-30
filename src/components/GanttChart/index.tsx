@@ -3,6 +3,13 @@ import { GanttItem } from "./GanttItem";
 import { YearLabel } from "./YearLabel";
 
 const startYear = 2019;
+interface ExperienceBoxProps {
+  experience: [string, Date, Date];
+  index: number;
+  setFocus: (index: number) => void;
+  removeFocus: () => void;
+  focusIndex: number | null;
+}
 
 function ExperienceBox({
   experience,
@@ -10,13 +17,7 @@ function ExperienceBox({
   setFocus,
   removeFocus,
   focusIndex,
-}: {
-  experience: [string, Date, Date];
-  index: number;
-  setFocus: (index: number) => void;
-  removeFocus: () => void;
-  focusIndex: number | null;
-}) {
+}: ExperienceBoxProps ) {
   return (
     <div
       className={`btn-Custom draw-border
@@ -43,7 +44,6 @@ export function GanttChart({
   const barHeight = 100 / experiences.length;
 
   const [focusIndex, setFocusIndex] = useState<number | null>(null);
-  const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const removeFocus = () => setFocusIndex(null);
   const setFocus = (index: number) => setFocusIndex(index);
